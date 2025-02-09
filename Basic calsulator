@@ -1,1 +1,37 @@
+def calculate(num1, num2, operator):
+    if operator == '+':
+        return num1 + num2
+    elif operator == '-':
+        return num1 - num2
+    elif operator == '*':
+        return num1 * num2
+    elif operator == '/':
+        if num2 == 0:
+            return "Error: Division by zero"
+        return num1 / num2
+    else:
+        return "Error: Invalid operator"
 
+while True:
+    try:
+        num1 = float(input("Enter the first number: "))
+        break
+    except ValueError:
+        print("Invalid input. Please enter a number.")
+
+while True:
+    try:
+        num2 = float(input("Enter the second number: "))
+        break
+    except ValueError:
+        print("Invalid input. Please enter a number.")
+
+while True:
+    operator = input("Enter the operator (+, -, *, /): ")
+    if operator in ('+', '-', '*', '/'):
+        break
+    else:
+        print("Invalid operator. Please use +, -, *, or /.")
+
+result = calculate(num1, num2, operator)
+print(f"{num1} {operator} {num2} = {result}")
